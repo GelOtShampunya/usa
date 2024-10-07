@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Награды</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+    />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .reward-card {
+            margin: 15px 0;
+            transition: transform 0.2s;
+        }
+        .reward-card:hover {
+            transform: scale(1.05);
+        }
+        .card-title {
+            font-weight: bold;
+        }
+        .server-info {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+
+        h1 {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 24px; /* Уменьшенный размер заголовка */
+        }
+        .navbar {
+            background-color: #343a40;
+        }
+        .navbar-brand img {
+            width: 32px;
+            height: 32px;
+        }
+        .nav-link {
+            color: #ffffff !important;
+            margin-left: 20px;
+        }
+        .nav-link:hover {
+            color: #c0c0c0 !important;
+        }
+        /* Активация dropdown при наведении */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        /* Определяем задержку для плавного появления */
+        .dropdown-menu {
+            margin-top: 0; /* Отмена смещения */
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img th:src="@{/images/icon.png}" alt="Logo"> <!-- Динамическое изображение -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/laws}">Законы</a> <!-- Динамическая ссылка -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/policy}">Политика</a> <!-- Динамическая ссылка -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/nessesaryCommands}">Необходимые команды</a> <!-- Динамическая ссылка -->
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button">
+                        Армия США
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" th:href="@{/awards}">Награды</a></li>
+                        <li><a class="dropdown-item" th:href="@{/positions}">Должности</a></li>
+                        <li><a class="dropdown-item" th:href="@{/staff}">Список кадров</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/loginUser}">Войти</a> <!-- Динамическая ссылка -->
+                </li>
+                <!-- Выпадающее меню -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Awards Section -->
+<div class="container">
+    <h1>Награды</h1>
+    <div class="reward-card">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Золотая Звезда Храбрости</h5>
+                <p class="card-text">Награда за выдающуюся храбрость и самопожертвование на поле боя. Вручается тем, кто проявил неимоверную отвагу во время защитных операций.</p>
+            </div>
+        </div>
+    </div>
+    <div class="reward-card">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Серебряная Звезда Долга</h5>
+                <p class="card-text">Эта награда присуждается за значительные достижения в боевых действиях. Поддержка товарищей и выполнение задач на высшем уровне.</p>
+            </div>
+        </div>
+    </div>
+    <div class="reward-card">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Бронзовая Звезда Лидерства</h5>
+                <p class="card-text">Награда, отмечающая исключительное лидерство в условиях боя, часто за выполнение сложных командных задач.</p>
+            </div>
+        </div>
+    </div>
+    <div class="reward-card">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Награда за Военные Заслуги</h5>
+                <p class="card-text">Вручается за выдающиеся достижения в выполнении служебных обязанностей и проявленную преданность идеалам сервера Xorealis.</p>
+            </div>
+        </div>
+    </div>
+    <div class="reward-card">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Награда за Отличную Службу</h5>
+                <p class="card-text">Присуждается тем, кто продемонстрировал выдающуюся службу и преданность делу, вне зависимости от сложности задач.</p>
+            </div>
+        </div>
+    </div>
+    <div class="reward-card">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Знак Чести Защитника</h5>
+                <p class="card-text">Награда, отмечающая военнослужащих, которые проявили исключительное мужество в защите союзников и гражданских лиц.</p>
+            </div>
+        </div>
+    </div>
+    <div class="reward-card">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Золотой Орел</h5>
+                <p class="card-text">Присуждается тем, кто успешно выполнил стратегическую задачу по защите Мавритании, проявив выдающиеся навыки тактики и стратегии.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+</html>

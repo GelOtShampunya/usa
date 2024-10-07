@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- Подключение Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa; /* Светлый фон для минималистичного стиля */
+    }
+    .container {
+      max-width: 400px;
+      margin-top: 100px; /* Центрирование по вертикали */
+      padding: 30px;
+      background-color: #fff; /* Белый фон для формы */
+      border-radius: 8px; /* Закругление углов */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Легкая тень для глубины */
+    }
+    h1 {
+      text-align: center;
+      color: #343a40; /* Темный цвет заголовка */
+    }
+    .btn {
+      width: 100%; /* Кнопки на всю ширину */
+      margin: 10px 0; /* Отступ между кнопками */
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Welcome</h1>
+  <form action="/login" method="get">
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+  <form action="/registrationUser" method="get">
+    <button type="submit" class="btn btn-secondary">Register</button>
+  </form>
+</div>
+
+<!-- Подключение Bootstrap JS и jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
