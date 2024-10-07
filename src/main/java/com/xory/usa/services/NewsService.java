@@ -19,4 +19,5 @@ public class NewsService {
     public void addNews(News news){
         newsRepository.save(news);
     }
+
 }
