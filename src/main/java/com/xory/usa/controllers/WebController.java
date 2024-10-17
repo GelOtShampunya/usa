@@ -42,7 +42,7 @@ public class WebController {
     }
     @GetMapping("/positions")
     public String positions() {
-        return "army/positions"; // Возвращает имя шаблона rewards.html
+        return "army/positions"; // Возвращаеет имя шаблона rewards.html
     }
 }
 
