@@ -38,7 +38,7 @@ public class WebController {
     }
     @GetMapping("/awards")
     public String awards() {
-        return "army/rewards"; // Возвращает имя шаблона rewards.html
+        return "army/rewards"; // Возвращает имя шшаблона rewards.html
     }
     @GetMapping("/positions")
     public String positions() {
