@@ -23,33 +23,14 @@ public class LoginController {
     public String login(@RequestParam(value = "error", required = false) String error, Model model) {
         if (error != null) {
             model.addAttribute("error", "Неверные учетные данные."); // Здесь вы можете настроить сообщение об ошибке
-            System.out.println("отладка");
+            System.out.println("неверные учетные данные");
         }
         return "registration/login"; // Убедитесь, что путь к вашему шаблону логина правильный
     }
 
-    @GetMapping("/registrationUser")
-    public String registrationUser() {
-        System.out.println("заход на регистрацию");
-        return "registration/registrationUser";
-    }
 
-    @PostMapping("/performRegistration")
-    public String performRegistration(@RequestParam String username,
-                                      @RequestParam String password,
-                                      Model model) {
-        System.out.println("Attempting to register user: " + username);
-        if (userService.userExists(username)) {
-            model.addAttribute("error", "Пользователь с таким именем уже существует.");
-            return "registration/registrationUser";
-        }
-        User newUser = new User();
-        newUser.setUsername(username);
-        newUser.setPassword(passwordEncoder.encode(password)); // Не забудьте закодировать пароль
-        userService.registerUser(newUser);
-        System.out.println("User registered successfully: " + username);
-        return "redirect:/login"; // Перенаправляем на страницу логина
-    }
+
+
     @PostMapping("/performLogin")
     public String performLogin(@RequestParam String username,
                                @RequestParam String password,

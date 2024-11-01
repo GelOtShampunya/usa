@@ -20,6 +20,7 @@ public class MonUserDetailsService implements UserDetailsService {
                 .map(user -> new org.springframework.security.core.userdetails.User(
                         user.getUsername(),
                         user.getPassword(),
+
                         new ArrayList<>())) // Здесь создается объект UserDetails
                 .orElseThrow(() -> new UsernameNotFoundException("Пользователь не найден"));
     }

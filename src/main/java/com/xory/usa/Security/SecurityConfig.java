@@ -15,7 +15,7 @@ public class SecurityConfig {
 
     private final String[] listOfAllAllowPages = {
             "/", "/login", "/register", "/awards", "/positions", "/registrationUser", "/loginUser", "/h2/**",
-            "/performRegistration","/login","performLogin"
+            "/performRegistration","/login","/performLogin"
     };
 
     @Bean
@@ -28,7 +28,8 @@ public class SecurityConfig {
                         .requestMatchers(listOfAllAllowPages).permitAll()
                         .requestMatchers("/h2/**").permitAll()
                         .anyRequest().authenticated()
-                )
+                ).csrf().ignoringRequestMatchers("/h2/**").
+                and().headers().frameOptions().sameOrigin().and()
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                         .maximumSessions(1)
